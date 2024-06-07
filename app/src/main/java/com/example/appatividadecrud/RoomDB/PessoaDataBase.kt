@@ -7,9 +7,7 @@ import androidx.room.RoomDatabase
     entities = [Pessoa::class],
     version = 1
 )
-
-
-
+//Banco de dados
 abstract class PessoaDataBase: RoomDatabase() {
     abstract fun pessoaDao(): PessoaDao
 }

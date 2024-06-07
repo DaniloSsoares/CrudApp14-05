@@ -80,6 +80,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+// declaração de variaveis para o formulário onde irão receber valores digitados
 fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
     var nome by remember {
         mutableStateOf("")
@@ -94,12 +95,15 @@ fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
         telefone
     )
     var pessoaList by remember {
+        //Recebendo valores de Objeto Pessoa em formato de lista
         mutableStateOf(listOf<Pessoa>())
     }
+    //visualização da lista
     viewModel.getPessoa().observe(mainActivity){
         pessoaList = it
     }
-
+//estruta/layout do formulário
+    //colocação de coluna.
     Column(
         Modifier
             .background(Color.White)
@@ -162,6 +166,7 @@ fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
         }
         Divider()
         LazyColumn {
+            // função
             items(pessoaList) { pessoa ->
                 Row(
                     Modifier
@@ -175,6 +180,7 @@ fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
                         Modifier
                             .fillMaxWidth(0.5f),
                         Arrangement.Center
+                        //
                     ) {
                         Text(text = "${pessoa.nome}")
                     }

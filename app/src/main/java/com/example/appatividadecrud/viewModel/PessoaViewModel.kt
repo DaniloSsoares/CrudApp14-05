@@ -5,7 +5,7 @@ import androidx.lifecycle.asLiveData
 import com.example.appatividadecrud.RoomDB.Pessoa
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-
+//SERVE COMO FUNÇAO SQL NA TABELA
 class PessoaViewModel(private val repository: Repository): ViewModel() {
     fun getPessoa() = repository.getAllPessoa().asLiveData(viewModelScope.coroutineContext)
 

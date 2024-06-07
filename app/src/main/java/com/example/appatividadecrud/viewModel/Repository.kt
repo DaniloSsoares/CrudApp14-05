@@ -2,7 +2,7 @@ package com.example.appatividadecrud.viewModel
 
 import com.example.appatividadecrud.RoomDB.Pessoa
 import com.example.appatividadecrud.RoomDB.PessoaDataBase
-
+//update e delete das class conectado ao banco de dados  atraves do recebmento do do PessoaDAO
 class Repository(private val db: PessoaDataBase) {
     suspend fun upsertPessoa(pessoa: Pessoa){
         db.pessoaDao().upsertPessoa(pessoa)
